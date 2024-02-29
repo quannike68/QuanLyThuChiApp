@@ -4,7 +4,7 @@
 >**Note**: Mọi người trước khi đảy code lên nhớ tạo nhánh Riêng sau đấy mới đẩy code lên ko đẩy vào nhánh chính . 
 
 Hinh anh minh hoa 
-<img src="https://d1iv5z3ivlqga1.cloudfront.net/wp-content/uploads/2023/11/03163533/tao-branch-trong-git-1.png" alt="git branch" width="250" />
+<img src="https://d1iv5z3ivlqga1.cloudfront.net/wp-content/uploads/2023/11/03163533/tao-branch-trong-git-1.png" alt="git branch" width="750" />
 
 ```bash
    #Tao branch mới (b1)
