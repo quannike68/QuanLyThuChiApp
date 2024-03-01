@@ -39,5 +39,6 @@
 
 
     # Mockup giao diện
-
+![](./assets/2.png)
 ![](./assets/1.png)
+
