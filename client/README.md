@@ -1,4 +1,4 @@
-# Task_1
+# Task_2
 
 ## Thiết kế database cho ứng dụng
 
@@ -25,72 +25,22 @@
         )
 
         -Add transaction (
-            + Thêm tiền 
-            + Tiêu Tiền 
+            + Thêm tiền
+            + Tiêu Tiền
 
         )
         -User(
-            
+
             + Update TK
-            + Setting 
+            + Setting
             + Logout
 
         )
 
 
-## Tìm hiểu và cài đặt môi trường React Native, các basic component, navigation => Show kết quả bằng một ứng dụng với 2 màn hình có thể navigate đến nhau bằng Button
+    # Mockup giao diện
 
-    ```
-    #App.js
-
-        import * as React from 'react';
-        import { NavigationContainer } from '@react-navigation/native';
-        import { createStackNavigator } from '@react-navigation/stack';
-        import Home from './app/View/Home';
-        import Login from './app/View/Login';
-
-            const Stack = createStackNavigator();
-
-        export default function App() {
-        return (
-            <NavigationContainer>
-                <Stack.Navigator initialRouteName="Home">
-                    <Stack.Screen name="Home" component={Home}/>
-                <Stack.Screen name="Login" component={Login}/>
-            </Stack.Navigator>
-            </NavigationContainer>
-         );
-    };
-
-    #Home.js
-
-    import react from "react";
-    import {View , Text , Button} from 'react-native'
-
-    export default function Home ({ navigation }) {
-    return (
-        <View>
-            <Text>
-                Home
-            </Text>
-            <Button title="Button" onPress={() => navigation.navigate('Login')}/>
-        </View>
-        )
-    }
-
-    #Login.js
-    import react from "react";
-    import {View , Text , Button} from 'react-native'
-
-        export default function Login ({ navigation }) {
-            return (
-                <View>
-                    <Text>
-                         Login
-                    </Text>
-                    <Button title="Button" onPress={() => navigation.navigate('Home')}/>
-                </View>
-        )
-    }
-
-    ```
+    <img src='./assets/1.png' alt="..." width="750" />
+    <img src='./assets/2.png' alt="..." width="750" />
+    <img src='./assets/3.png' alt="..." width="750" />
+    <img src='./assets/4.png' alt="..." width="750" />
