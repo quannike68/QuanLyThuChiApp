@@ -35,7 +35,7 @@
 
 ## Xem xét database dựa trên list tính năng
 
-![]('./assets/imgDatabase.png)
+![]('../assets/imgDatabase.png')
 
 Bảng User:
 
@@ -73,8 +73,7 @@ Bảng Role:
 
 - Mỗi vai trò (role) có thể được gán cho nhiều người dùng (user) .
 
-
-## Xử lý backend, xây dựng API 
+## Xử lý backend, xây dựng API
 
     Lương làm em sẽ xem và hoàn thiện vào ngày mai
 
@@ -86,69 +85,70 @@ Bảng Role:
 
 - Register
 
-- Trang chủ 
-    - - Tên tài khoản 
-    - - Số Dư Ví (hiện tại)
-    - - Loại tiền tệ 
-    - - Chọn Ví 
-    - - Tên Ví
-    - - 10 giao dịch của ngày hôm nay (tất cac các Ví)
+- Trang chủ
 
-- Groud Ví 
-    - Hiển thị group Ví
-    - Số Lượng Ví trong từng group
-    - Nút Thêm group Ví
-    - Nút Xoá group Ví 
+  - - Tên tài khoản
+  - - Số Dư Ví (hiện tại)
+  - - Loại tiền tệ
+  - - Chọn Ví
+  - - Tên Ví
+  - - 10 giao dịch của ngày hôm nay (tất cac các Ví)
 
-- All Ví trong Group 
-    - - Hiển thị tất cac các Ví trong group
-    - - Tên Ví 
-    - - Số dư 
-    - - Loại Tiền tệ 
-    - - Nút Tạo Ví 
-    - - Nút Xoá Ví
+- Groud Ví
 
-- Ví 
-    - - Tên Ví 
-    - - Số Dư 
-    - - Nút Thu - Chi 
-    - - Các Giao dịch gần nhất của Ví
+  - Hiển thị group Ví
+  - Số Lượng Ví trong từng group
+  - Nút Thêm group Ví
+  - Nút Xoá group Ví
 
-- Thu Chi 
-    - - Các Thông tin tương ứng vs bảng Thu Chi(Số Tiền , Thời gian , Tên)
+- All Ví trong Group
 
-- Tạo Ví 
-    - - Tạo thông tin Ví Tưng ứng Vs Db (sửa)
-    - - Nút Tạo Ví 
+  - - Hiển thị tất cac các Ví trong group
+  - - Tên Ví
+  - - Số dư
+  - - Loại Tiền tệ
+  - - Nút Tạo Ví
+  - - Nút Xoá Ví
 
-- Quản lý 
-    - - Tên user 
-    - - Nút Thông Tin user
-    - - Nút Đăng Xuất 
+- Ví
 
--Thông tin user
-    - - Các Thông tin của user 
-    - - Nút sửa thông tin
-    - - Nút xoá tài khoản
+  - - Tên Ví
+  - - Số Dư
+  - - Nút Thu - Chi
+  - - Các Giao dịch gần nhất của Ví
 
+- Thu Chi
+
+  - - Các Thông tin tương ứng vs bảng Thu Chi(Số Tiền , Thời gian , Tên)
+
+- Tạo Ví
+
+  - - Tạo thông tin Ví Tưng ứng Vs Db (sửa)
+  - - Nút Tạo Ví
+
+- Quản lý
+  - - Tên user
+  - - Nút Thông Tin user
+  - - Nút Đăng Xuất
+
+-Thông tin user - - Các Thông tin của user - - Nút sửa thông tin - - Nút xoá tài khoản
 
 ### Root
 
-- Đăng nhập 
+- Đăng nhập
 
-- Trang chủ 
-    - - Tên Tk root 
-    - - Nút đăng xuất
-    - - Thông tin các user (10)
-    - - Thanh search user
-- User 
-    - - Tên user 
-    - - Thông tin user
-    - - Nút Thông Tin Ví (Group)
-- Group Ví 
-    - - Thông Tin Các Ví
-    - - Nút Xoá Ví , Thêm Ví , Sửa Ví
-- Ví 
-    - - Tên Ví 
-    - - Thông Tin Ví
-
+- Trang chủ
+  - - Tên Tk root
+  - - Nút đăng xuất
+  - - Thông tin các user (10)
+  - - Thanh search user
+- User
+  - - Tên user
+  - - Thông tin user
+  - - Nút Thông Tin Ví (Group)
+- Group Ví
+  - - Thông Tin Các Ví
+  - - Nút Xoá Ví , Thêm Ví , Sửa Ví
+- Ví
+  - - Tên Ví
+  - - Thông Tin V
