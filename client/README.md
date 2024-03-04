@@ -35,7 +35,7 @@
 
 ## Xem xét database dựa trên list tính năng
 
-![]('../assets/imgDatabase.png')
+![](./assets/imgDatabase.png)
 
 Bảng User:
 
