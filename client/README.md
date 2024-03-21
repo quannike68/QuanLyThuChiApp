@@ -1,154 +1,79 @@
-# Task_2
+This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-## Xây dựng list tính năng cho ứng dụng
+# Getting Started
 
-| Tính Năng                  | Mô tả                                               | Đối Tượng                            |
-| -------------------------- | --------------------------------------------------- | ------------------------------------ |
-| Quản lý Tài Khoản          | Đăng ký                                             | Người muốn quản lý dòng tiền qua App |
-|                            | Đăng Nhập                                           |                                      |
-|                            | Xem Tài Khoản                                       |                                      |
-|                            | Sửa Tài Khoản                                       |                                      |
-|                            | Xoá Tài Khoản Cá Nhân                               |                                      |
-| Quản Lý Ví                 | Thêm Ví                                             |                                      |
-|                            | Sửa Ví                                              |                                      |
-|                            | Xoá Ví                                              |                                      |
-|                            | Thêm loại ví                                        |                                      |
-|                            | Xem Tất cả ví hiện có                               |                                      |
-|                            | Cài đặt nội dung cảnh báo hạn                       |                                      |
-|                            | Cài đặt nội dung cảnh báo hạn mức của ví            |                                      |
-| Quản Lý Thu Chi (Từng Ví)  | Thêm Thông tin                                      |                                      |
-|                            | Thêm Thông tin                                      |                                      |
-|                            | Sửa                                                 |                                      |
-|                            | Theo dõi số dư                                      |                                      |
-|                            | Theo dõi Thu Chi của ví                             |                                      |
-|                            | Lọc Thu Chi (Theo Thời gian hoặc theo Thu hoặc Chi) |                                      |
-| Quản lý Tài Khoản          | Đăng ký                                             | Quản lý App                          |
-|                            | Đăng Nhập                                           |                                      |
-|                            | Xem Tài Khoản                                       |                                      |
-|                            | Sửa Tài Khoản                                       |                                      |
-|                            | Xem Toàn Bộ Tài Khoản                               |                                      |
-|                            | Xoá Tài Khoản                                       |                                      |
-| Quản Lý Ví(Từng Tài Khoản) | Thêm Ví                                             |                                      |
-|                            | Sửa Ví                                              |                                      |
-|                            | Xoá Ví                                              |                                      |
-|                            | Xem Thông Tin Ví                                    |                                      |
+>**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
-## Xem xét database dựa trên list tính năng
+## Step 1: Start the Metro Server
 
-![](./assets/imgDatabase.png)
+First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
 
-Bảng User:
+To start Metro, run the following command from the _root_ of your React Native project:
 
-- Mỗi người dùng (user) có thể có nhiều ví (wallet) .
-- Mỗi người dùng (user) có thể có nhiều danh mục (category) .
-- Mỗi người dùng (user) có thể có nhiều nhóm danh mục (categoriesGroup) .
-- Mỗi giao dịch (transaction) thuộc về một người dùng (user) .
+```bash
+# using npm
+npm start
 
-Bảng Wallet:
+# OR using Yarn
+yarn start
+```
 
-- Mỗi ví (wallet) thuộc về một người dùng (user) .
+## Step 2: Start your Application
 
-Bảng Category:
+Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
 
-- Mỗi danh mục (category) thuộc về một người dùng (user) .
-- Mỗi danh mục (category) thuộc về một nhóm danh mục (categoriesGroup) .
+### For Android
 
-Bảng CategoriesGroup:
+```bash
+# using npm
+npm run android
 
-- Mỗi nhóm danh mục (categoriesGroup) thuộc về một người dùng (user) .
+# OR using Yarn
+yarn android
+```
 
-Bảng Transaction:
+### For iOS
 
-- Mỗi giao dịch (transaction) thuộc về một người dùng (user) .
-- Mỗi giao dịch (transaction) thuộc về một ví (wallet) .
-- Mỗi giao dịch (transaction) thuộc về một danh mục (category) .
-- Mỗi giao dịch (transaction) thuộc về một nhóm danh mục (categoriesGroup) .
-- Mỗi giao dịch (transaction) sử dụng một loại tiền tệ (currency) .
+```bash
+# using npm
+npm run ios
 
-Bảng Currency:
+# OR using Yarn
+yarn ios
+```
 
-- Mỗi loại tiền tệ (currency) có thể được sử dụng trong nhiều giao dịch (transaction) .
+If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
 
-Bảng Role:
+This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
 
-- Mỗi vai trò (role) có thể được gán cho nhiều người dùng (user) .
+## Step 3: Modifying your App
 
-## Xử lý backend, xây dựng API
+Now that you have successfully run the app, let's modify it.
 
-    Lương làm em sẽ xem và hoàn thiện vào ngày mai
+1. Open `App.tsx` in your text editor of choice and edit some lines.
+2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
 
-## Từ list tính năng => list màn hình
+   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
 
-### User
+## Congratulations! :tada:
 
-- Đăng nhập
+You've successfully run and modified your React Native App. :partying_face:
 
-- Register
+### Now what?
 
-- Trang chủ
+- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
+- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
 
-  - - Tên tài khoản
-  - - Số Dư Ví (hiện tại)
-  - - Loại tiền tệ
-  - - Chọn Ví
-  - - Tên Ví
-  - - 10 giao dịch của ngày hôm nay (tất cac các Ví)
+# Troubleshooting
 
-- Groud Ví
+If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
 
-  - Hiển thị group Ví
-  - Số Lượng Ví trong từng group
-  - Nút Thêm group Ví
-  - Nút Xoá group Ví
+# Learn More
 
-- All Ví trong Group
+To learn more about React Native, take a look at the following resources:
 
-  - - Hiển thị tất cac các Ví trong group
-  - - Tên Ví
-  - - Số dư
-  - - Loại Tiền tệ
-  - - Nút Tạo Ví
-  - - Nút Xoá Ví
-
-- Ví
-
-  - - Tên Ví
-  - - Số Dư
-  - - Nút Thu - Chi
-  - - Các Giao dịch gần nhất của Ví
-
-- Thu Chi
-
-  - - Các Thông tin tương ứng vs bảng Thu Chi(Số Tiền , Thời gian , Tên)
-
-- Tạo Ví
-
-  - - Tạo thông tin Ví Tưng ứng Vs Db (sửa)
-  - - Nút Tạo Ví
-
-- Quản lý
-  - - Tên user
-  - - Nút Thông Tin user
-  - - Nút Đăng Xuất
-
--Thông tin user - - Các Thông tin của user - - Nút sửa thông tin - - Nút xoá tài khoản
-
-### Root
-
-- Đăng nhập
-
-- Trang chủ
-  - - Tên Tk root
-  - - Nút đăng xuất
-  - - Thông tin các user (10)
-  - - Thanh search user
-- User
-  - - Tên user
-  - - Thông tin user
-  - - Nút Thông Tin Ví (Group)
-- Group Ví
-  - - Thông Tin Các Ví
-  - - Nút Xoá Ví , Thêm Ví , Sửa Ví
-- Ví
-  - - Tên Ví
-  - - Thông Tin V
+- [React Native Website](https://reactnative.dev) - learn more about React Native.
+- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
+- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
+- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
+- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
