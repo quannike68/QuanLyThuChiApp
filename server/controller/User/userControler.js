@@ -25,10 +25,13 @@ const CreateUpdateUser = async (req, res) => {
       .json({ success: false, message: 'Nhap thieu du lieu' });
 
   try {
-
     //Cap nhat user
     if (_id) {
       const findUser = await userModel.findOne({ userName });
+      const checkDelete = await findUser.deletedAt
+      if(checkDelete){
+        return res.status(400).json({message : "tai khoan da bi xoa" , success : false })
+      }
       if (findUser) {
         findUser.userName = userName || findUser.userName;
         findUser.email = email || findUser.email;
@@ -53,6 +56,7 @@ const CreateUpdateUser = async (req, res) => {
           message: 'Ko timf thay tai khoan',
         });
       }
+    
     } 
     //Tao user
     else {
@@ -121,7 +125,9 @@ const Login = async (req, res) => {
 
   try {
     const findAuth = await userModel.findOne({ userName });
-
+    if(findAuth.deleteMark){
+      return res.status(400).json({message : "Tai khoan ko ton tai" , success : false})
+    }
     if (!findAuth)
       return res
         .status(400)
@@ -150,6 +156,8 @@ const Login = async (req, res) => {
     findAuth.access_token = accessToken;
     findAuth.refresh_token = refreshToken;
 
+    await findAuth.save();
+
     res.status(200).json({
       success: true,
       message: 'User login successfully',
@@ -172,7 +180,7 @@ const Login = async (req, res) => {
 const GetUser = async (req, res) => {
   const { _id } = req.body;
   try {
-    const findUser = await userModel.findById(_id).select('-password');
+    const findUser = await userModel.findById(req.user._id).select('-password');
 
     if (findUser) {
       return res.status(200).json({ success: true, findUser });
@@ -191,15 +199,16 @@ const GetUser = async (req, res) => {
 const DeleteUser = async (req, res, next) => {
   const { _id } = req.body;
   try {
-    const findUser = await userModel.findById(_id).select('-password');
+    const findUser = await userModel.findById(req.user._id).select('-password');
 
     const ckeckdeleteMark = findUser.deleteMark
 
     if(!ckeckdeleteMark) {
+     
       findUser.deleteMark = true ;
       findUser.access_token = "";
       findUser.refresh_token = "";
-      findUser.deletedAt = new Date("<YYYY-mm-dd>") ;
+      findUser.deletedAt = new Date() ;
       findUser.save();
       return (
         res.status(200).json({message : "Xoa thanh cong" , success : true , findUser })

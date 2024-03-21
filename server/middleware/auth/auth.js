@@ -20,7 +20,7 @@ const Protec = asyncHandle(async (req, res, next) => {
         .findById({ _id: userId })
         .select('-password');
 
-      req.body = userInfor._id;
+      req.user = userInfor._id;
 
       next();
     } catch (error) {

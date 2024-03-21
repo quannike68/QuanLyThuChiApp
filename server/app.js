@@ -7,7 +7,9 @@ const cors = require('cors')
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const walletRouter = require('./routes/wallet')
+const walletRouter = require('./routes/wallet');
+const currencyRouter = require('./routes/currency')
+const catogoryRouter = require('./routes/catogorys')
 
 const app = express();
 
@@ -27,7 +29,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/wallet',walletRouter)
+app.use('/wallet',walletRouter);
+app.use('/currency' , currencyRouter) ;
+app.use('/categories' , catogoryRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

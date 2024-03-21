@@ -4,15 +4,16 @@ const walletSchema = new mongoose.Schema(
   {
     userId: {
       type: mongoose.Schema.Types.ObjectId,
-      // required: true,
-      ref: 'user',
+      required: true,
+      ref: 'users',
     },
     name: {
       type: String,
       required: true,
     },
     amount: {
-      type: Number,
+      type: String,
+      required: true,
     },
     deleteMark: {
       type: Boolean,
@@ -26,6 +27,11 @@ const walletSchema = new mongoose.Schema(
   { timestamps: true },
 );
 
-const Wallet = mongoose.model('wallet', walletSchema);
+walletSchema.pre('save', async function(next) {
+  if (!this.isNew)
+    return next(); 
+});
+
+const Wallet = mongoose.model('wallets', walletSchema);
 
 module.exports = Wallet;
